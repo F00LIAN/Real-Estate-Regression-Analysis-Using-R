@@ -154,12 +154,14 @@ summary(reg7)
 <p> <img src="https://github.com/user-attachments/assets/regression_summary.png" height="80%" width="80%" alt="Regression Summary"/> </p>
 
 <h2>Conclusion</h2>
+
 - Simple linear regression was used to model house prices based on floor area.
 - Multiple regression analysis improved predictive power using multiple features.
 - Dummy variables accounted for seasonal variations in sales price.
 - Model diagnostics such as R² and RMSE were used to evaluate performance.
 
 <h2>Future Improvements</h2>
+
 - Experiment with log transformations to handle non-linearity.
 - Implement ridge and lasso regression for better feature selection.
 - Use decision tree regression for non-linear relationships.
