@@ -1,9 +1,10 @@
 # regression analysis in R
-setwd("D:/Foundation of Business Analytics/August 2021/Class 3/")
+
+install.packages("readxl")
 
 # read in a sample excel sheet
 library("readxl")
-homes2 = as.data.frame(read_excel("D:\\Foundation of Business Analytics\\August 2021\\Class 3\\homes2.xlsx",sheet="Sheet1"))
+homes2 = as.data.frame(read_excel("D:/Fun R Projects/Real-Estate-Regression-Analysis/homes2.xlsx",sheet="Sheet1"))
 attach(homes2)
 homes2
 
@@ -20,7 +21,6 @@ reg1 # this prints the regression coefficients
 # show Y intercept
 plot(Floor, Price,frame=F, pch=19, cex=2, font.axis=2, 
      ylim=c(180, 285), xlim=c(0, 3),font.lab=2)
-
 
 # overlay the regression line on the plot
 abline(reg1, col="red")
@@ -68,7 +68,6 @@ abline(reg2, col="red", lwd=2)
 coefs <- coef(reg2)
 coefs
 coefs[1] + coefs[2]*2000
-
 
 # multiple regression using square feet (heated), square feet (unheated), number of bedrooms, bathrooms, total acreage and home age
 reg3 <- lm(salespr ~ bedrooms + acres + age + totbaths + sqftheat + squnheat)
@@ -132,4 +131,3 @@ sqrt(sum(errors.2)/(N - K)) # root MSE or standard error of regression
 # look at R-squared value
 # the R-squared value is reported in R as: "Multiple R-squared"
 summary(reg7)
-
