@@ -48,41 +48,66 @@ attach(homes2)
 ```r
 plot(Floor, Price, frame=F, pch=19, cex=2, font.axis=2, font.lab=2)
 ```
-<p> <img src="https://github.com/user-attachments/assets/scatterplot_regression.png" height="80%" width="80%" alt="Scatter Plot with Regression"/> </p>
+<p> <img src="https://github.com/user-attachments/assets/9b812c47-0b98-4842-b11e-ed9a393bfad8" height="30%" width="30%" alt="Scatter Plot with Regression"/> </p>
 
 ### 4. Fitting a Simple Linear Regression Model
 ```r
 reg1 <- lm(Price ~ Floor)
 summary(reg1)
 ```
+<p> <img src="https://github.com/user-attachments/assets/ece49880-2b66-4099-a5b6-56c731290dba" height="60%" width="60%" alt="Regression Line"/> </p>
 
 ### 5. Adding Regression Line
 ```r
 abline(reg1, col="red", lwd=2)
 ```
-<p> <img src="https://github.com/user-attachments/assets/regression_line.png" height="80%" width="80%" alt="Regression Line"/> </p>
+<p> <img src="https://github.com/user-attachments/assets/5c168eba-5058-4474-ac86-dfcc6b55aa1c" height="30%" width="30%" alt="Regression Line"/> </p>
 
 <h2>Regression Diagnostics</h2>
 
-### 6. Extracting Fitted Values and Residuals
+### 6. Summary Results and Extracting Fitted Values and Residuals
 ```r
+# fit statistics and model results
+summary(reg1)
+
 fits <- fitted(reg1)
 resid <- resid(reg1)
 ```
+
+<p> <img src="https://github.com/user-attachments/assets/7a3b3d47-1822-49b2-b082-7ec773c00c5f" height="60%" width="60%" alt="Summary"/> </p>
 
 ### 7. Overlaying Fitted Values
 ```r
 points(Floor, fits, pch=4, col="darkblue", lwd=2)
 ```
-<p> <img src="https://github.com/user-attachments/assets/fitted_values.png" height="80%" width="80%" alt="Fitted Values"/> </p>
+<p> <img src="https://github.com/user-attachments/assets/553f2547-4dc4-4472-9683-0fac3e955bea" height="30%" width="30%" alt="Fitted Values"/> </p>
 
 <h2>Multiple Regression Analysis</h2>
 
-### 8. Load Real Estate Dataset
+### 8. Load the Large Real Estate Dataset and Run Test Regression
 ```r
 homes3 <- read.table("real estate data.txt", header=T, sep="\t")
 attach(homes3)
+
+# simple linear regression using only square footage (heated) as the independent variable
+reg2 <- lm(salespr ~ sqftheat)
+summary(reg2)
+
+# let's plot the actual real estate data
+plot(sqftheat, salespr, frame=F, pch=19, font.axis=2, font.lab=2, cex=.5)
+
+# now let's insert the regression line
+abline(reg2, col="red", lwd=2)
+
+# what is the expected selling price of a house that has 2000 heated square feet?
+coefs <- coef(reg2)
+coefs
+coefs[1] + coefs[2]*2000
 ```
+
+<p> <img src="https://github.com/user-attachments/assets/4154d295-864d-46e6-8d79-071737e75713" height="30%" width="30%" alt="Plot"/> </p>
+
+- The Expected Selling Price of a house that has 2000 heated square feet is $266,690
 
 ### 9. Fit Multiple Regression Model
 ```r
@@ -98,7 +123,7 @@ sales.prices <- predict(object=reg3, newdata=new.homes)
 # Combine Predicted Prices with Data
 sales20 <- cbind(new.homes, sales.prices)
 ```
-<p> <img src="https://github.com/user-attachments/assets/predicted_prices.png" height="80%" width="80%" alt="Predicted Prices"/> </p>
+<p> <img src="https://github.com/user-attachments/assets/41f68a80-9869-40c5-b5bc-bc94ed33a169" height="60%" width="60%" alt="Predicted Prices"/> </p>
 
 <h2>Using Dummy Variables in Regression</h2>
 
@@ -123,7 +148,7 @@ sales.summer    <- coefs3[1] + coefs3[2]*sqftheat + coefs3[3]
 lines(sqftheat, sales.no.summer, lwd=2, col="blue") # Homes not sold in summer
 lines(sqftheat, sales.summer, lwd=2, col="darkgreen") # Homes sold in summer
 ```
-<p> <img src="https://github.com/user-attachments/assets/dummy_variable_regression.png" height="80%" width="80%" alt="Dummy Variable Regression"/> </p>
+<p> <img src="https://github.com/user-attachments/assets/44ad7ad9-78ef-476c-83fc-99922adcc52a" height="40%" width="40%" alt="Dummy Variable Regression"/> </p>
 
 ### 13. Changing Reference Group
 ```r
@@ -151,7 +176,7 @@ sqrt(sum(errors.2)/(N - K))
 ```r
 summary(reg7)
 ```
-<p> <img src="https://github.com/user-attachments/assets/regression_summary.png" height="80%" width="80%" alt="Regression Summary"/> </p>
+<p> <img src="https://github.com/user-attachments/assets/3bd08e2b-46cf-43fc-a06d-785a52a0975c" height="60%" width="60%" alt="Regression Summary"/> </p>
 
 <h2>Conclusion</h2>
 
