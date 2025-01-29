@@ -540,6 +540,13 @@ table(new.predicted.group)
 - Multiple regression analysis improved predictive power using multiple features.
 - Dummy variables accounted for seasonal variations in sales price.
 - Model diagnostics such as R² and RMSE were used to evaluate performance.
+- Multiple Regression with various predictors.
+- Influential Point Detection (Cook’s distance).
+- Train/Test Splits and computing out-of-sample R-squared to detect overfitting.
+- Multicollinearity and its effects on regression coefficients.
+- Variable Selection using forward and backward stepwise methods.
+- Transformations (logs, polynomials) to capture nonlinearities.
+- Ordered Probit for binary and ordered categorical outcomes.
 
 <h2>Future Improvements</h2>
 
