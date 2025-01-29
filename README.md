@@ -178,6 +178,28 @@ summary(reg7)
 ```
 <p> <img src="https://github.com/user-attachments/assets/3bd08e2b-46cf-43fc-a06d-785a52a0975c" height="60%" width="60%" alt="Regression Summary"/> </p>
 
+<h2>Advanced Regression Techniques</h2>
+
+### 16. Load in New Data
+```r
+# run a new regression model
+homes3 <- read.table("D:/data/real estate data.txt", header=T, sep="\t")
+attach(homes3)
+
+# suppress scientific notation
+options(scipen=999)
+par(mfrow=c(1,1))
+```
+<p> <img src="https://github.com/user-attachments/assets/3bd08e2b-46cf-43fc-a06d-785a52a0975c" height="60%" width="60%" alt="Regression Summary"/> </p>
+
+
+
+
+
+
+
+
+
 <h2>Conclusion</h2>
 
 - Simple linear regression was used to model house prices based on floor area.
