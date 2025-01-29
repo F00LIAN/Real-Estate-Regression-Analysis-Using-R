@@ -4,7 +4,7 @@ install.packages("readxl")
 
 # read in a sample excel sheet
 library("readxl")
-homes2 = as.data.frame(read_excel("D:/Fun R Projects/Real-Estate-Regression-Analysis/homes2.xlsx",sheet="Sheet1"))
+homes2 = as.data.frame(read_excel("D:/data/homes2.xlsx", sheet="Sheet1"))
 attach(homes2)
 homes2
 
@@ -48,7 +48,7 @@ detach(homes2)
 rm(list=ls(all=T))
 
 # read in the real estate data
-homes3 <- read.table("real estate data.txt", header=T, sep="\t")
+homes3 <- read.table("D:/data/real estate data.txt", header=T, sep="\t")
 attach(homes3)
 
 # suppress scientific notation
@@ -75,7 +75,7 @@ reg3
 summary(reg3)
 
 # predict the selling prices of 20 new homes
-new.homes <- read.table("20 new homes.txt", header=T, sep="\t")
+new.homes <- read.table("D:/data/20 new homes.txt", header=T, sep="\t")
 new.homes
 
 sales.prices <- predict(object=reg3, newdata=new.homes)
