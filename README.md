@@ -405,7 +405,7 @@ vars.selected # 2 vars in backward but not forward. 1 var in forward but not bac
 
 - Stepwise methods can yield different subsets, so results should be interpreted carefully.
 
-### 21. Performing Log Transformations to Reduce Skewness of Data
+### 22. Performing Log Transformations to Reduce Skewness of Data
 ```r
 # transformations of X
 Y <- c(5, 9, 14.5, 13.3, 16, 17.4, 18, 17.5, 18.8, 18)
@@ -432,7 +432,7 @@ summary(lm(Y ~ X + X2)) # include both X and X2 in the model
 
 - Always interpret transformed coefficients carefully (e.g., logs interpret as percentage changes).
 
-### 22. Ordered Probit
+### 23. Ordered Probit
 ```r
 # what about when more than two possible outcomes are possible for Y?
 # let's look at a quick example
