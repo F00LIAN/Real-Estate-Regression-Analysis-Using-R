@@ -7,7 +7,7 @@ This project demonstrates linear and multiple regression analysis using R. It ex
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: Regression Analysis in R](https://www.youtube.com/watch?v=wNsKf7wSqhQ)
+- ### [YouTube: Regression Analysis in R (Coming Soon)](https://www.youtube.com/watch?v=wNsKf7wSqhQ)
 
 <h2>Environments and Technologies Used</h2>
 
